@@ -6,13 +6,13 @@
 /*   By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 12:12:21 by ademarti          #+#    #+#             */
-/*   Updated: 2024/05/03 16:46:04 by ademarti         ###   ########.fr       */
+/*   Updated: 2024/05/07 16:33:03 by ademarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void prep_nodes_a(s_stack **s_a, s_stack **s_b)
+void	prep_nodes_a(s_stack **s_a, s_stack **s_b)
 {
 	set_index(*s_a);
 	set_index(*s_b);
@@ -21,7 +21,7 @@ void prep_nodes_a(s_stack **s_a, s_stack **s_b)
 	find_cheapest(*s_a);
 }
 
-void find_target_a(s_stack *s_a, s_stack *s_b)
+void	find_target_a(s_stack *s_a, s_stack *s_b)
 {
 	s_stack *target_node;
 	s_stack *ptr_a;
