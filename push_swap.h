@@ -6,7 +6,7 @@
 /*   By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 13:31:16 by ademarti          #+#    #+#             */
-/*   Updated: 2024/05/07 11:48:45 by ademarti         ###   ########.fr       */
+/*   Updated: 2024/05/07 13:25:38 by ademarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ void free_stack(s_stack **stack);
 void	error_free(s_stack **s_a);
 void handle_arguments(char **av, s_stack *s_a);
 int	stack_sorted(s_stack **stack);
+void    ft_free_args(char **args);
 
 //All operations
 void push(s_stack **src, s_stack **dest);

@@ -6,7 +6,7 @@
 /*   By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 17:17:37 by ademarti          #+#    #+#             */
-/*   Updated: 2024/05/05 12:10:48 by ademarti         ###   ########.fr       */
+/*   Updated: 2024/05/07 13:26:52 by ademarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,17 @@ int	error_syntax(char **av)
 		i++;
 	}
 	return (0);
+}
+
+void    ft_free_args(char **args)
+{
+        int     i;
+        i = 0;
+        if (!args || !(*args))
+                return ;
+        while (args[i])
+                free(args[i++]);
+        free(args);
 }
 
 void	free_stack(s_stack **stack)

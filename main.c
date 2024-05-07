@@ -29,5 +29,6 @@ int	main(int ac, char **av)
 		return (0);
 	sorting_stacks(&a, &b);
 	free_stack(&a);
+	ft_free_args(av);
 	return (0);
 }
