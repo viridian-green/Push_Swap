@@ -6,7 +6,7 @@
 /*   By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 11:51:37 by ademarti          #+#    #+#             */
-/*   Updated: 2024/05/07 15:09:13 by ademarti         ###   ########.fr       */
+/*   Updated: 2024/05/07 16:27:31 by ademarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,4 @@ void	initialize_stack(char **av, s_stack **s_a)
 		insert_front(s_a, (int)nbr);
 		i++;
 	}
-	// ft_free_args(av);
 }

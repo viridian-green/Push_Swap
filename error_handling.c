@@ -6,7 +6,7 @@
 /*   By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 17:17:37 by ademarti          #+#    #+#             */
-/*   Updated: 2024/05/07 16:21:22 by ademarti         ###   ########.fr       */
+/*   Updated: 2024/05/07 16:30:18 by ademarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,10 +125,26 @@ void	free_stack(s_stack **stack)
 	*stack = NULL;
 }
 
+void ft_free_args_2(char **args)
+{
+	int	i;
+
+	i = -1;
+	if (!args || !(*args))
+		return ;
+	while (args[i])
+	{
+		free(args[i]);
+		args[i] = NULL;
+		i++;
+	}
+	free(args -1);
+}
+
 void	error_free(s_stack **s_a, char **av)
 {
 	free_stack(s_a);
-	ft_free_args(av);
+	ft_free_args_2(av);
 	write(2, "Error\n", 6);
 	exit(1);
 }
