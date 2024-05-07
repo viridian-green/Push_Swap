@@ -6,7 +6,7 @@
 /*   By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 17:03:28 by ademarti          #+#    #+#             */
-/*   Updated: 2024/05/03 12:43:30 by ademarti         ###   ########.fr       */
+/*   Updated: 2024/05/07 17:08:21 by ademarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,10 @@ long	ft_atol(const char *s)
 
 int	stack_len(s_stack *stack)
 {
-	int	counter;
-	counter = 0;
+	int		counter;
+	s_stack	*temp;
 
-	s_stack *temp;
+	counter = 0;
 	temp = stack;
 	if (stack == NULL)
 		return (0);
@@ -52,7 +52,7 @@ int	stack_len(s_stack *stack)
 
 s_stack	*traverse_stack(s_stack *head)
 {
-	s_stack *temp;
+	s_stack	*temp;
 
 	temp = head;
 	if (!head)
@@ -64,9 +64,9 @@ s_stack	*traverse_stack(s_stack *head)
 	return (temp);
 }
 
-int stack_sorted(s_stack **stack)
+int	stack_sorted(s_stack **stack)
 {
-	s_stack *curr;
+	s_stack	*curr;
 
 	curr = *stack;
 	while (curr->next)
@@ -79,14 +79,14 @@ int stack_sorted(s_stack **stack)
 	return (1);
 }
 
-s_stack *find_max_value(s_stack *s_a)
+s_stack	*find_max_value(s_stack *s_a)
 {
+	s_stack	*max_value;
 	long	max;
-	s_stack *max_value;
 
 	max = LONG_MIN;
 	if (!s_a)
-		return NULL;
+		return (NULL);
 	while (s_a)
 	{
 	if (s_a->value > max)
@@ -99,10 +99,10 @@ s_stack *find_max_value(s_stack *s_a)
 	return (max_value);
 }
 
-s_stack *find_min_value(s_stack *s_a)
+s_stack	*find_min_value(s_stack *s_a)
 {
-	long min;
-	s_stack *min_value;
+	long	min;
+	s_stack	*min_value;
 
 	min = LONG_MAX;
 	if (!s_a)
@@ -119,7 +119,7 @@ s_stack *find_min_value(s_stack *s_a)
 	return (min_value);
 }
 
-void min_on_top(s_stack **a)
+void	min_on_top(s_stack **a)
 {
 	while((*a)->value != find_min_value(*a)->value)
 	{
@@ -128,4 +128,39 @@ void min_on_top(s_stack **a)
 		else
 			rra(a);
 	}
+}
+void	move_on_top(s_stack **stack, s_stack *top_node, char stack_name)
+{
+	while (*stack != top_node)
+	{
+		if (stack_name == 'a')
+		{
+			if (top_node->above_median)
+				ra(stack);
+			else
+				rra(stack);
+		}
+		else if (stack_name == 'b')
+		{
+			if (top_node->above_median)
+				rb(stack);
+			else
+				rrb(stack);
+		}
+	}
+}
+s_stack	*get_cheapest(s_stack *stack)
+{
+	s_stack	*temp;
+
+	temp = stack;
+	if (!stack)
+		return (NULL);
+	while (temp)
+	{
+		if (temp->cheapest == true)
+			return (temp);
+		temp = temp->next;
+	}
+	return (NULL);
 }

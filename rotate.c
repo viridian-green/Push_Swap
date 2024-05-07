@@ -6,7 +6,7 @@
 /*   By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 17:19:07 by ademarti          #+#    #+#             */
-/*   Updated: 2024/05/07 12:09:27 by ademarti         ###   ########.fr       */
+/*   Updated: 2024/05/07 16:58:58 by ademarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ void	rotate(s_stack **stack)
 		return ;
 	last_node = traverse_stack(*stack);
 	to_rotate = *stack;
-	last_node->next = to_rotate; //this makes first node to last node
-	*stack = (*stack)->next; //this removes the top node from stack
-	last_node->next->next = NULL; //this terminates the stack
+	last_node->next = to_rotate;
+	*stack = (*stack)->next;
+	last_node->next->next = NULL;
 }
 
 void	rb(s_stack **s_b)

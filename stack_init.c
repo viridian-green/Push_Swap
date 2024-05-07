@@ -6,7 +6,7 @@
 /*   By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 11:51:37 by ademarti          #+#    #+#             */
-/*   Updated: 2024/05/07 16:27:31 by ademarti         ###   ########.fr       */
+/*   Updated: 2024/05/07 17:06:34 by ademarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,27 @@ void	initialize_stack(char **av, s_stack **s_a)
 		if ((nbr > INT_MAX) || (nbr < INT_MIN))
 			error_free(s_a, av);
 		insert_front(s_a, (int)nbr);
+		i++;
+	}
+}
+
+void	set_index(s_stack *stack)
+{
+	s_stack	*s_stack;
+	int		median;
+	int		i;
+
+	s_stack = stack;
+	median = stack_len(s_stack) / 2;
+	i = 0;
+	while (s_stack)
+	{
+		s_stack->index = i;
+		if (i <= median)
+			s_stack->above_median = true;
+		else
+			s_stack->above_median = false;
+		s_stack = s_stack->next;
 		i++;
 	}
 }

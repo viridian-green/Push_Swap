@@ -6,7 +6,7 @@
 /*   By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 14:21:33 by ademarti          #+#    #+#             */
-/*   Updated: 2024/05/07 12:20:09 by ademarti         ###   ########.fr       */
+/*   Updated: 2024/05/07 16:58:35 by ademarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,6 @@ void	reverse_rotate(s_stack **stack)
 	current->next = *stack;
 	*stack = current;
 }
-
-/*This functions shifts all nodes to the right and breaks last node from second last node. the last node to the first node.
-This is the detaching the last node from list and puts it as head.*/
 
 void	rra(s_stack **s_a)
 {
