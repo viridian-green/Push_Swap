@@ -6,7 +6,7 @@
 /*   By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 13:31:03 by ademarti          #+#    #+#             */
-/*   Updated: 2024/05/07 11:30:55 by ademarti         ###   ########.fr       */
+/*   Updated: 2024/05/07 12:01:02 by ademarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,8 @@ void	push(s_stack **src, s_stack **dest)
 		*dest = node_to_push;
 	}
 }
+
+/* Else statement, if stack is not empty, links the next node of the list to the node to push!*/
 
 void	pa(s_stack **stack_b, s_stack **stack_a)
 {

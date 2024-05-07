@@ -6,20 +6,18 @@
 /*   By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 11:45:44 by ademarti          #+#    #+#             */
-/*   Updated: 2024/03/11 17:10:20 by ademarti         ###   ########.fr       */
+/*   Updated: 2024/05/07 12:47:15 by ademarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+size_t	ft_strlen(const char *str)
 {
 	size_t	i;
 
 	i = 0;
-	while (s[i] != '\0')
-	{
+	while (str[i] != '\0')
 		i++;
-	}
 	return (i);
 }

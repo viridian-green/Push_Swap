@@ -28,13 +28,6 @@ int	main(int ac, char **av)
 	if (stack_sorted(&a))
 		return (0);
 	sorting_stacks(&a, &b);
-	// s_stack	*curr;
-	// curr = a;
-	// while (curr != NULL)
-	// {
-	// 	printf("%d\n", curr->value);
-	// 	curr = curr->next;
-	// }
 	free_stack(&a);
 	return (0);
 }

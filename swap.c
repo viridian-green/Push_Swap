@@ -6,7 +6,7 @@
 /*   By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 17:36:55 by ademarti          #+#    #+#             */
-/*   Updated: 2024/05/07 11:28:46 by ademarti         ###   ########.fr       */
+/*   Updated: 2024/05/07 12:06:10 by ademarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,3 @@ void	sb(s_stack **s_b)
 	swap(s_b);
 	ft_putstr_fd("sb\n", 1);
 }
-
-// void	ss(s_stack **s_a, s_stack **s_b)
-// {
-// 	swap(s_a);
-// 	swap(s_b);
-// 	ft_putstr_fd("ss\n", 1);
-// }
