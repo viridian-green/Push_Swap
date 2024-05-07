@@ -6,14 +6,14 @@
 #    By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/04 13:30:55 by ademarti          #+#    #+#              #
-#    Updated: 2024/05/07 13:05:36 by ademarti         ###   ########.fr        #
+#    Updated: 2024/05/07 13:48:57 by ademarti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 CC = gcc
 CFLAGS = -Wextra -Wall -Werror -g
-SRC = push.c main.c error_handling.c swap.c utils.c ft_split.c rotate.c a_to_b.c b_to_a.c sort_stacks.c reverse_rotate.c stack_init.c algorithm.c
+SRC = push.c main.c error_handling.c swap.c utils.c split_to_str.c rotate.c a_to_b.c b_to_a.c sort_stacks.c reverse_rotate.c stack_init.c algorithm.c
 LIBFT = libft
 OBJS = $(SRC:.c=.o)
 all: $(NAME)
