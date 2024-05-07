@@ -6,7 +6,7 @@
 /*   By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 13:31:16 by ademarti          #+#    #+#             */
-/*   Updated: 2024/05/07 15:03:17 by ademarti         ###   ########.fr       */
+/*   Updated: 2024/05/07 15:32:21 by ademarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,17 +32,18 @@ typedef struct t_stack
 } s_stack;
 
 //Error handling
-char	**ft_split(char const *s, char c);
-long	ft_atol(const char *str);
 int	check_duplicates(s_stack *s_a, int n);
 int error_syntax(char **av);
+
+//Memory
 void free_stack(s_stack **stack);
 void error_free(s_stack **s_a, char **av);
-void handle_arguments(char **av, s_stack *s_a);
-int	stack_sorted(s_stack **stack);
 void    ft_free_args(char **args);
 
-//All operations
+//Split arguments
+char	**ft_split(char const *s, char c);
+
+//Operations
 void push(s_stack **src, s_stack **dest);
 void	pa(s_stack **stack_a, s_stack **stack_b);
 void	pb(s_stack **stack_a, s_stack **stack_b);
@@ -61,35 +62,32 @@ void	rrr(s_stack **s_a, s_stack **s_b);
 //Utils
 int	stack_len(s_stack *stack);
 s_stack	*traverse_stack(s_stack *head);
-int	check_sort_a(s_stack **stack);
-void min_on_top(s_stack **a);
-
-//Algorithm
-int tiny_sort(s_stack **a);
-void sort_three(s_stack **s_a);
-void	move_a_to_b(s_stack **a, s_stack **b);
 s_stack *find_max_value(s_stack *s_a);
 s_stack *find_min_value(s_stack *s_a);
-
-//Initialize stack
-void	initialize_stack(char **av, s_stack **s_a);
-s_stack *get_cheapest(s_stack *stack);
-
-//Algo functions
 void sorting_stacks(s_stack **s_a, s_stack **s_b);
 void set_index(s_stack *stack);
 void find_cheapest(s_stack *stack);
+s_stack *get_cheapest(s_stack *stack);
+long	ft_atol(const char *str);
+void	initialize_stack(char **av, s_stack **s_a);
 
+//Algorithm
+int	stack_sorted(s_stack **stack);
+int tiny_sort(s_stack **a);
+void sort_three(s_stack **s_a);
+int	check_sort_a(s_stack **stack);
+void min_on_top(s_stack **a);
+void	move_a_to_b(s_stack **a, s_stack **b);
+void	move_on_top(s_stack **stack, s_stack *top_node, char stack_name);
 void reverse_rotate_both(s_stack **s_a, s_stack **s_b, s_stack *cheapest_node);
 void rotate_both(s_stack **s_a, s_stack **s_b, s_stack *cheapest_node);
-void	move_on_top(s_stack **stack, s_stack *top_node, char stack_name);
 
-//a_to_b
+//From stack a to stack b
 void prep_nodes_a(s_stack **s_a, s_stack **s_b);
 void find_target_a(s_stack *s_a, s_stack *s_b);
 void find_cost_a(s_stack *s_a, s_stack *s_b);
 
-//b_to_a
+//From stack b to stack a
 void prep_nodes_b(s_stack *a, s_stack *b);
 void find_target_b(s_stack *s_a, s_stack *s_b);
 void	move_b_to_a(s_stack **a, s_stack **b);

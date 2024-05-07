@@ -6,7 +6,7 @@
 /*   By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 17:17:37 by ademarti          #+#    #+#             */
-/*   Updated: 2024/05/07 15:15:18 by ademarti         ###   ########.fr       */
+/*   Updated: 2024/05/07 16:21:22 by ademarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,10 @@ int	check_duplicates(s_stack *s_a, int n)
 // 	i = 0;
 // 	while (nbr[i])
 // 	{
-// 		if ((nbr[i] == '-' && nbr[i + 1] == '-') || ((nbr[i] == '-') && !(nbr[i + 1] >= '0' && nbr[i + 1] <= '9')) ||
-// 		((nbr[i] == '+') && (nbr[i + 1] == '+')) || (!(nbr[i] >= '0' && nbr[i] <= '9') && nbr[i] != '+' && nbr[i] != '-' && nbr[i] != ' '))
+// 		if ((nbr[i] == '-' && nbr[i + 1] == '-') || ((nbr[i] == '-')
+// 		&& !(nbr[i + 1] >= '0' && nbr[i + 1] <= '9')) ||
+// 		((nbr[i] == '+') && (nbr[i + 1] == '+')) || (!(nbr[i] >= '0' && nbr[i] <= '9')
+// 		 && nbr[i] != '+' && nbr[i] != '-' && nbr[i] != ' '))
 // 			return (1);
 // 		i++;
 // 	}
@@ -90,19 +92,20 @@ int	error_syntax(char **av)
 	return (0);
 }
 
-void    ft_free_args(char **args)
+void	ft_free_args(char **args)
 {
-        int     i;
-        i = -1;
-        if (!args || !(*args))
-                return ;
-        while (args[i])
-            {
-			free(args[i]);
-			args[i] = NULL;
-			i++;
+	int	i;
+
+	i = 0;
+	if (!args || !(*args))
+		return ;
+	while (args[i])
+	{
+		free(args[i]);
+		args[i] = NULL;
+		i++;
 	}
-		free(args -1);
+	free(args);
 }
 
 void	free_stack(s_stack **stack)
