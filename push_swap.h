@@ -6,7 +6,7 @@
 /*   By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 13:31:16 by ademarti          #+#    #+#             */
-/*   Updated: 2024/05/07 13:59:15 by ademarti         ###   ########.fr       */
+/*   Updated: 2024/05/07 15:03:17 by ademarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ long	ft_atol(const char *str);
 int	check_duplicates(s_stack *s_a, int n);
 int error_syntax(char **av);
 void free_stack(s_stack **stack);
-void	error_free(s_stack **s_a);
+void error_free(s_stack **s_a, char **av);
 void handle_arguments(char **av, s_stack *s_a);
 int	stack_sorted(s_stack **stack);
 void    ft_free_args(char **args);

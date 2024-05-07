@@ -6,11 +6,65 @@
 /*   By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/05 11:43:27 by ademarti          #+#    #+#             */
-/*   Updated: 2024/05/07 13:58:42 by ademarti         ###   ########.fr       */
+/*   Updated: 2024/05/07 14:55:19 by ademarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+size_t	ft_strlen(const char *str)
+{
+	size_t	i;
+
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}
+
+char	*ft_strdup(const char *s)
+{
+	char	*dest;
+	size_t	i;
+
+	i = 0;
+	dest = malloc(ft_strlen(s)+1);
+	if (!dest)
+		return (NULL);
+	while (i < ft_strlen(s))
+	{
+		dest[i] = s[i];
+		i++;
+	}
+	dest[i] = '\0';
+	return (dest);
+}
+
+char	*ft_substr(const char *str, unsigned int start, size_t len)
+{
+	size_t	i;
+	size_t	len_str;
+	size_t	len_sub;
+	char	*substr;
+
+	len_str = ft_strlen(str);
+	if (str == NULL || len_str <= start)
+		return (ft_strdup(""));
+	len_sub = len_str - start;
+	if (len_sub > len)
+		len_sub = len;
+	substr = (char *)malloc(len_sub +1);
+	if (substr == NULL)
+		return (NULL);
+	i = 0;
+	while (i < len_sub)
+	{
+		substr[i] = str[start + i];
+		i++;
+	}
+	substr[i] = '\0';
+	return (substr);
+}
 
 size_t	count_words(const char *str, char c)
 {

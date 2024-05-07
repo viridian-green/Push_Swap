@@ -6,7 +6,7 @@
 /*   By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 11:51:37 by ademarti          #+#    #+#             */
-/*   Updated: 2024/05/07 11:33:46 by ademarti         ###   ########.fr       */
+/*   Updated: 2024/05/07 15:09:13 by ademarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,12 +45,13 @@ void	initialize_stack(char **av, s_stack **s_a)
 	{
 		nbr = ft_atol(av[i]);
 		if (check_duplicates(*s_a, ((int)nbr)) == 1)
-			error_free(s_a);
+			error_free(s_a, av);
 		if (error_syntax(av) == 1)
-			error_free(s_a);
+			error_free(s_a, av);
 		if ((nbr > INT_MAX) || (nbr < INT_MIN))
-			error_free(s_a);
+			error_free(s_a, av);
 		insert_front(s_a, (int)nbr);
 		i++;
 	}
+	// ft_free_args(av);
 }
