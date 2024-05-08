@@ -6,13 +6,13 @@
 /*   By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 12:12:21 by ademarti          #+#    #+#             */
-/*   Updated: 2024/05/07 16:43:18 by ademarti         ###   ########.fr       */
+/*   Updated: 2024/05/08 13:18:51 by ademarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	prep_nodes_a(s_stack **s_a, s_stack **s_b)
+void	prep_nodes_a(t_s **s_a, t_s **s_b)
 {
 	set_index(*s_a);
 	set_index(*s_b);
@@ -21,11 +21,11 @@ void	prep_nodes_a(s_stack **s_a, s_stack **s_b)
 	find_cheapest(*s_a);
 }
 
-void	find_target_a(s_stack *s_a, s_stack *s_b)
+void	find_target_a(t_s *s_a, t_s *s_b)
 {
-	s_stack	*target_node;
-	s_stack	*p_a;
-	s_stack	*p_b;
+	t_s		*target_node;
+	t_s		*p_a;
+	t_s		*p_b;
 	int		closest_smaller;
 
 	p_a = s_a;
@@ -50,11 +50,11 @@ void	find_target_a(s_stack *s_a, s_stack *s_b)
 	}
 }
 
-void	find_cost_a(s_stack *s_a, s_stack *s_b)
+void	find_cost_a(t_s *s_a, t_s *s_b)
 {
 	int		len_sa;
 	int		len_sb;
-	s_stack	*ptr_a;
+	t_s		*ptr_a;
 
 	ptr_a = s_a;
 	len_sa = stack_len(s_a);
@@ -72,9 +72,9 @@ void	find_cost_a(s_stack *s_a, s_stack *s_b)
 	}
 }
 
-void	move_a_to_b(s_stack **a, s_stack **b)
+void	move_a_to_b(t_s **a, t_s **b)
 {
-	s_stack	*cheapest_node;
+	t_s	*cheapest_node;
 
 	cheapest_node = get_cheapest(*a);
 	if ((cheapest_node->above_median) && (cheapest_node->target->above_median))

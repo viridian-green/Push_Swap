@@ -6,13 +6,13 @@
 /*   By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 15:26:22 by ademarti          #+#    #+#             */
-/*   Updated: 2024/05/07 16:46:31 by ademarti         ###   ########.fr       */
+/*   Updated: 2024/05/08 13:19:07 by ademarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	tiny_sort(s_stack **s_a)
+int	tiny_sort(t_s **s_a)
 {
 	if (stack_len(*s_a) == 2)
 		sa(s_a);
@@ -24,9 +24,9 @@ int	tiny_sort(s_stack **s_a)
 	return (1);
 }
 
-void	sort_three(s_stack **s_a)
+void	sort_three(t_s **s_a)
 {
-	s_stack	*biggest_node;
+	t_s	*biggest_node;
 
 	biggest_node = find_max_value(*s_a);
 	if (*s_a == biggest_node)
@@ -37,7 +37,7 @@ void	sort_three(s_stack **s_a)
 		sa(s_a);
 }
 
-void	sorting_stacks(s_stack **a, s_stack **b)
+void	sorting_stacks(t_s **a, t_s **b)
 {
 	if (stack_len(*a) > 3 && !stack_sorted(a))
 		pb(a, b);
@@ -58,11 +58,11 @@ void	sorting_stacks(s_stack **a, s_stack **b)
 	min_on_top(a);
 }
 
-void	find_cheapest(s_stack *stack)
+void	find_cheapest(t_s	*stack)
 {
 	int		cheapest_value;
-	s_stack	*cheapest_node;
-	s_stack	*ptr;
+	t_s		*cheapest_node;
+	t_s		*ptr;
 
 	ptr = stack;
 	if (!stack)

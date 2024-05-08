@@ -6,15 +6,15 @@
 /*   By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 17:17:37 by ademarti          #+#    #+#             */
-/*   Updated: 2024/05/07 16:56:41 by ademarti         ###   ########.fr       */
+/*   Updated: 2024/05/08 13:08:57 by ademarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	check_duplicates(s_stack *s_a, int n)
+int	check_duplicates(t_s *s_a, int n)
 {
-	s_stack	*temp;
+	t_s	*temp;
 
 	temp = s_a;
 	if (!s_a)

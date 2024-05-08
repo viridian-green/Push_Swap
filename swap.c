@@ -6,17 +6,17 @@
 /*   By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 17:36:55 by ademarti          #+#    #+#             */
-/*   Updated: 2024/05/07 12:06:10 by ademarti         ###   ########.fr       */
+/*   Updated: 2024/05/08 13:15:06 by ademarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	swap(s_stack **stack)
+void	swap(t_s **stack)
 {
 	int		len;
-	s_stack	*node_one;
-	s_stack	*node_two;
+	t_s		*node_one;
+	t_s		*node_two;
 
 	len = stack_len(*stack);
 	if (stack == NULL || *stack == NULL || 1 == len)
@@ -28,13 +28,13 @@ void	swap(s_stack **stack)
 	*stack = node_one;
 }
 
-void	sa(s_stack **s_a)
+void	sa(t_s **s_a)
 {
 	swap(s_a);
 	ft_putstr_fd("sa\n", 1);
 }
 
-void	sb(s_stack **s_b)
+void	sb(t_s **s_b)
 {
 	swap(s_b);
 	ft_putstr_fd("sb\n", 1);

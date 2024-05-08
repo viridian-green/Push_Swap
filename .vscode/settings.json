@@ -11,6 +11,15 @@
 		"tuple": "c",
 		"type_traits": "c",
 		"utility": "c",
-		"variant": "c"
+		"variant": "c",
+		"deque": "c",
+		"list": "c",
+		"string": "c",
+		"vector": "c",
+		"iterator": "c",
+		"string_view": "c",
+		"span": "c",
+		"regex": "c",
+		"unordered_map": "c"
 	}
 }

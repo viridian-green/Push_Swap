@@ -6,15 +6,15 @@
 /*   By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 13:31:03 by ademarti          #+#    #+#             */
-/*   Updated: 2024/05/07 16:58:28 by ademarti         ###   ########.fr       */
+/*   Updated: 2024/05/08 13:10:47 by ademarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push(s_stack **src, s_stack **dest)
+void	push(t_s **src, t_s **dest)
 {
-	s_stack	*node_to_push;
+	t_s	*node_to_push;
 
 	if (*src == NULL)
 		return ;
@@ -32,13 +32,13 @@ void	push(s_stack **src, s_stack **dest)
 	}
 }
 
-void	pa(s_stack **stack_b, s_stack **stack_a)
+void	pa(t_s **stack_b, t_s **stack_a)
 {
 	push(stack_b, stack_a);
 	ft_putstr_fd("pa\n", 1);
 }
 
-void	pb(s_stack **stack_a, s_stack **stack_b)
+void	pb(t_s **stack_a, t_s **stack_b)
 {
 	push(stack_a, stack_b);
 	ft_putstr_fd("pb\n", 1);

@@ -6,16 +6,16 @@
 /*   By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 17:19:07 by ademarti          #+#    #+#             */
-/*   Updated: 2024/05/07 16:58:58 by ademarti         ###   ########.fr       */
+/*   Updated: 2024/05/08 13:19:43 by ademarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	rotate(s_stack **stack)
+void	rotate(t_s **stack)
 {
-	s_stack	*to_rotate;
-	s_stack	*last_node;
+	t_s		*to_rotate;
+	t_s		*last_node;
 	int		len;
 
 	len = stack_len(*stack);
@@ -28,19 +28,19 @@ void	rotate(s_stack **stack)
 	last_node->next->next = NULL;
 }
 
-void	rb(s_stack **s_b)
+void	rb(t_s **s_b)
 {
 	rotate(s_b);
 	ft_putstr_fd("rb\n", 1);
 }
 
-void	ra(s_stack **s_a)
+void	ra(t_s **s_a)
 {
 	rotate(s_a);
 	ft_putstr_fd("ra\n", 1);
 }
 
-void	rr(s_stack **s_a, s_stack **s_b)
+void	rr(t_s **s_a, t_s **s_b)
 {
 	rotate(s_a);
 	rotate(s_b);

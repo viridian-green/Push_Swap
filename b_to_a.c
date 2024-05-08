@@ -6,30 +6,30 @@
 /*   By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/03 11:57:55 by ademarti          #+#    #+#             */
-/*   Updated: 2024/05/07 16:48:27 by ademarti         ###   ########.fr       */
+/*   Updated: 2024/05/08 13:08:46 by ademarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	move_b_to_a(s_stack **a, s_stack **b)
+void	move_b_to_a(t_s **a, t_s **b)
 {
 	move_on_top(a, (*b)->target, 'a');
 	pa(b, a);
 }
 
-void	prep_nodes_b(s_stack *a, s_stack *b)
+void	prep_nodes_b(t_s *a, t_s *b)
 {
 	set_index(a);
 	set_index(b);
 	find_target_b(a, b);
 }
 
-void	find_target_b(s_stack *s_a, s_stack *s_b)
+void	find_target_b(t_s *s_a, t_s *s_b)
 {
-	s_stack	*p_a;
-	s_stack	*p_b;
-	s_stack	*target_node;
+	t_s		*p_a;
+	t_s		*p_b;
+	t_s		*target_node;
 	int		closest_bigger;
 
 	p_b = s_b;

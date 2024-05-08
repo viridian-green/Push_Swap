@@ -6,17 +6,17 @@
 /*   By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/13 14:21:33 by ademarti          #+#    #+#             */
-/*   Updated: 2024/05/07 16:58:35 by ademarti         ###   ########.fr       */
+/*   Updated: 2024/05/08 13:19:34 by ademarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	reverse_rotate(s_stack **stack)
+void	reverse_rotate(t_s **stack)
 {
 	int		len;
-	s_stack	*prev;
-	s_stack	*current;
+	t_s		*prev;
+	t_s		*current;
 
 	len = stack_len(*stack);
 	if (NULL == stack || NULL == *stack || 1 == len)
@@ -33,19 +33,19 @@ void	reverse_rotate(s_stack **stack)
 	*stack = current;
 }
 
-void	rra(s_stack **s_a)
+void	rra(t_s **s_a)
 {
 	reverse_rotate(s_a);
 	ft_putstr_fd("rra\n", 1);
 }
 
-void	rrb(s_stack **s_b)
+void	rrb(t_s **s_b)
 {
 	reverse_rotate(s_b);
 	ft_putstr_fd("rrb\n", 1);
 }
 
-void	rrr(s_stack **s_a, s_stack **s_b)
+void	rrr(t_s **s_a, t_s **s_b)
 {
 	reverse_rotate(s_a);
 	reverse_rotate(s_b);

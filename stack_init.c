@@ -6,20 +6,41 @@
 /*   By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 11:51:37 by ademarti          #+#    #+#             */
-/*   Updated: 2024/05/07 17:06:34 by ademarti         ###   ########.fr       */
+/*   Updated: 2024/05/08 13:21:38 by ademarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	insert_front(s_stack **stack, int n)
+long	ft_atol(const char *s)
 {
-	s_stack	*new_node;
-	s_stack	*last_node;
+	long	result;
+	int		sign;
+
+	result = 0;
+	sign = 1;
+	while (*s == ' ' || *s == '\t' || *s == '\n' || \
+			*s == '\r' || *s == '\f' || *s == '\v')
+		s++;
+	if (*s == '-' || *s == '+')
+	{
+		if (*s == '-')
+			sign = -1;
+		s++;
+	}
+	while (ft_isdigit(*s))
+		result = result * 10 + (*s++ - '0');
+	return (result * sign);
+}
+
+void	insert_front(t_s **stack, int n)
+{
+	t_s	*new_node;
+	t_s	*last_node;
 
 	if (!stack)
 		return ;
-	new_node = malloc(sizeof(s_stack));
+	new_node = malloc(sizeof(t_s));
 	if (!new_node)
 		return ;
 	new_node->value = n;
@@ -35,7 +56,7 @@ void	insert_front(s_stack **stack, int n)
 	}
 }
 
-void	initialize_stack(char **av, s_stack **s_a)
+void	initialize_stack(char **av, t_s **s_a)
 {
 	int		i;
 	long	nbr;
@@ -55,9 +76,9 @@ void	initialize_stack(char **av, s_stack **s_a)
 	}
 }
 
-void	set_index(s_stack *stack)
+void	set_index(t_s *stack)
 {
-	s_stack	*s_stack;
+	t_s		*s_stack;
 	int		median;
 	int		i;
 
@@ -74,4 +95,18 @@ void	set_index(s_stack *stack)
 		s_stack = s_stack->next;
 		i++;
 	}
+}
+
+t_s	*traverse_stack(t_s *head)
+{
+	t_s	*temp;
+
+	temp = head;
+	if (!head)
+		return (NULL);
+	while (temp->next)
+	{
+		temp = temp->next;
+	}
+	return (temp);
 }
