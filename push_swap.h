@@ -6,7 +6,7 @@
 /*   By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 13:31:16 by ademarti          #+#    #+#             */
-/*   Updated: 2024/05/08 13:23:15 by ademarti         ###   ########.fr       */
+/*   Updated: 2024/05/09 16:35:12 by ademarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void				free_args_error(char **args);
 
 //Memory
 void				free_stack(t_s **stack);
-void				error_free(t_s **s_a, char **av);
+void				error_free(t_s **s_a, char **av, int ac);
 void				ft_free_args(char **args);
 
 //Split arguments
@@ -70,7 +70,7 @@ void				set_index(t_s *stack);
 void				find_cheapest(t_s *stack);
 t_s					*get_cheapest(t_s *stack);
 long				ft_atol(const char *str);
-void				initialize_stack(char **av, t_s **s_a);
+void				initialize_stack(char **av, t_s **s_a, int ac);
 
 //Algorithm
 int					stack_sorted(t_s **stack);
