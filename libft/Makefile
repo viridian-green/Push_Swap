@@ -6,7 +6,7 @@
 #    By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/22 14:07:38 by ademarti          #+#    #+#              #
-#    Updated: 2024/05/05 12:38:46 by ademarti         ###   ########.fr        #
+#    Updated: 2024/05/10 15:36:47 by ademarti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,9 +21,9 @@ SRCS = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 
 OBJS			= $(SRCS:.c=.o)
 
-CC				= gcc
+CC				= cc
 RM				= rm -f
-CFLAGS			= -Wall -Wextra -Werror -I.
+CFLAGS			= -Wall -Wextra -Werror -I. -g
 
 all:			$(NAME)
 

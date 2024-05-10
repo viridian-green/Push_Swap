@@ -6,7 +6,7 @@
 /*   By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/07 16:57:32 by ademarti          #+#    #+#             */
-/*   Updated: 2024/05/09 16:33:51 by ademarti         ###   ########.fr       */
+/*   Updated: 2024/05/10 15:43:34 by ademarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@ int	main(int ac, char **av)
 		av = ft_split(av[1], ' ');
 	}
 	initialize_stack(av + 1, &a, ac);
-	if (stack_sorted(&a))
-		return (0);
 	sorting_stacks(&a, &b);
 	free_stack(&a);
 	if (ac == 2)

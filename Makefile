@@ -6,13 +6,13 @@
 #    By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/04 13:30:55 by ademarti          #+#    #+#              #
-#    Updated: 2024/05/07 16:55:58 by ademarti         ###   ########.fr        #
+#    Updated: 2024/05/10 15:55:21 by ademarti         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
-CC = gcc
-CFLAGS = -Wextra -Wall -Werror -g
+CC = cc
+CFLAGS = -Wextra -Wall -Werror
 SRC = push.c\
  main.c \
  memory.c \
@@ -35,16 +35,17 @@ $(NAME): $(OBJS)
 	@make -C $(LIBFT)
 	$(CC) $(CFLAGS) $(OBJS) -L./$(LIBFT) -lft -o $(NAME)
 
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
 clean:
 	rm -rf $(LIBFT)/*.o
 	rm -rf $(OBJS)
-	rm -rf $(BONUS_OBJS)
 
 fclean: clean
 	rm -f $(LIBFT)/libft.a
 	rm -f $(NAME)
-	rm -f $(BONUS_NAME)
 
 re: fclean all
 
-.PHONY: all bonus clean fclean re
+.PHONY: all clean fclean re

@@ -6,7 +6,7 @@
 /*   By: ademarti <ademarti@student.42berlin.de     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/04 13:31:16 by ademarti          #+#    #+#             */
-/*   Updated: 2024/05/09 16:35:12 by ademarti         ###   ########.fr       */
+/*   Updated: 2024/05/10 15:55:34 by ademarti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include <stdbool.h>
 # include "libft/libft.h"
 # include <limits.h>
-// # include <stdio.h>
 
 typedef struct t_stack
 {
